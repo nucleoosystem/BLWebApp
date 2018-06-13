@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Live Sermons Home</h1>
+
+  <p>Welcome to <em>Live Sermons</em>, a live streaming experience from your favorite preachers</p>
+
+<h2>Live Streams</h2>
+
+  <p>Follow the Streams Below</p>
+  <ul>
+    <li><strong>Sermons</strong> {{ num_books }}</li>
+    <li><strong>Preacher</strong> {{ num_instances }}</li>
+    <li><strong>Contact Us</strong> {{ num_instances_available }}</li>
+    <li><strong>Giving</strong> {{ num_authors }}</li>
+  </ul>
+
+{% endblock %}
