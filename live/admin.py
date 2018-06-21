@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-from .models import Sermon, Speaker
+from .models import Teachings
 
-admin.site.register(Sermon)
-admin.site.register(Speaker)
+admin.site.register(Teachings)
 
 # Register your models here.
