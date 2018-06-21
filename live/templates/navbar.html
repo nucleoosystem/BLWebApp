@@ -1,22 +1,16 @@
-<!DOCTYPE html>
+{% extends 'base_generic.html' %}
 
-<html lang="en">
+{% load static %}
 
-<head>
-
-  <title>Church Live Stream</title>
-
-    <meta charset="=utf-8"/>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type='text/css'/>
-    <link href="navbar-static-top.css" rel="stylesheet"/>
-
-</head>
-
-<title>Background Image</title>
-
-<body>
-
-    <img src='{% static "static/Rain_Fire.mov" %}' />
-
-</body>
+{% block content %}
+<header> 
+        <div class="v-header container">
+            <div class="fullscreen-bg">
+               <div class="fullscreen-video-wrap">
+                   <video src= "{% static "images/moving.mp4" %}" autoplay="" loop="">
+                       </video>
+                   </div>
+               <div class="header-overlay"></div>
+           <div class="header-content text-md-center">
+       </div>
+{% endblock content %}

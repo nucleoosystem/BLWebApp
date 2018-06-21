@@ -8,9 +8,9 @@ from django.contrib.contenttypes.models import ContentType
 class Sermon(models.Model):
     '''A listing of teachings'''
     name_of_speaker = models.CharField(max_length=200)
-    sermon_date = models.DateTimeField(auto_now_add=True)
-    church = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True)
-    summary = models.TextField(max_length=500, help_text='Enter a brief description of the sermon')
+    sermon_date     = models.DateTimeField(auto_now_add=True)
+    church          = models.CharField(max_length=200)
+    summary         = models.TextField(max_length=500, help_text='Enter a brief description of the sermon')
 
     def __str__(self):
         '''Return a string representation of the model.'''

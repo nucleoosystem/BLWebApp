@@ -4,9 +4,20 @@ from .models import Sermon, Speaker
 
 from django.views.generic.base import TemplateView
 
-class HomePage(TemplateView):
+class Home(TemplateView):
 
-    template_name = 'live/home.html'
+    template_name = 'home.html'
+
+class About(TemplateView):
+    template_name = 'about.html'
+
+class Sermon(TemplateView):
+    template_name = 'sermon.html'
+
+class Login(TemplateView):
+    template_name = 'login.html'
+
+
 
 #def testhome(request):
 #    context = {}

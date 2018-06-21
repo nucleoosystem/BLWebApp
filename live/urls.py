@@ -4,9 +4,11 @@ from django.views.generic import View
 
 from . import views
 
-from .views import HomePage
-
 urlpatterns = [
     path('', views.index, name='index'),
-#    path('', Views.testhome, name='testhome'),
+    path('Home/', views.Home.as_view(), name='Home'),
+    path('about/', views.About.as_view(), name='about'),
+    path('sermon/', views.Sermon.as_view(), name='sermon'),
+    path('login', views.Login.as_view(), name='login'),
+
 ]

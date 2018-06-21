@@ -23,7 +23,9 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('live/', include('live.urls')),
+    path('users/', include('users.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('users/', include('allauth.urls')),
     path('', RedirectView.as_view(url='/live/', permanent =True)), 
     ] 
 

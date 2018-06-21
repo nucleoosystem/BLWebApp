@@ -4,7 +4,7 @@
 
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'static/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static "static/live.css" %}" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -12,59 +12,75 @@
 
 {% block nav-style %}mkt-nav{% endblock nav-style %}
 
+
+{% load socialaccount %}
+
+<h1>Django Allauth Tutorial</h1>
+{% if user.is_authenticated %}
+<p>Welcome {{ user.username }} !!!</p>
+{% else %}
+<a href="{% provider_login_url 'google' %}">Sign Up</a>
+<a href="{% provider_login_url 'facebook' %}">Sign Up</a>
+{% endif %}
+
+
 {% block content %}  
 
-    {# Hero Section #}  
+ {# Hero Section #} 
+ <div class="v-header container"> 
+        <div class="fullscreen-bg">
+           <div class="fullscreen-video-wrap">
+               <div class="fullscreen-bg__video">
+               <video src= "{% static "images/moving.mp4" %}" autoplay="" loop="">
+                   </video>
+               </div>
+           <div class="header-overlay"></div> 
+       <div class="header-content text-md-center">
+   </div>
+
+<div class="column"> 
     <div class="mkt-s1">
-        <div class="mkt-s1-body container ">
-            <div class="row">
-                <h1 class="col-md-8">Sermons from Comfort of Your Living Room</h1>
-            </div>
-            <div class="row">
-                <p class="col-md-8">Track live sermons from all corners of the world</p>
-            </div>
-            <img controls="controls" width="800" height="600" 
-            name="Video Name" src="{% static "images/sermon.jpg" %}"/>
-            <div class="row">
-                {# First Signup Link #}
+            <div class="column">
                 <a href=""
                    class="sign-up btn btn-success">Sign Up And Get Connected!
                 </a>
             </div>
         </div>
     </div>
+
     {# Main Section #}
-    <div class="mkt-s2 container">
-        <h2 class="mkt-s2-h">Why Join Our Online Church</h2>
-        <div class="mkt-s2-body">
-            <div class="col-md-4 mkt-vp">
-                <img class="" src="{% static "images/clock.png" %}" />
-                <h5>Save Time</h5>
-                <p>We are not always lucky to be in places 
-                    our best preachers are located but can be 
-                    provided with the best online church experience
-                    that matches real church attendance.
-                </p>
+    
+<div class="row">
+    <div class="column">
+        <div class="mkt-s2 container">
+            <h2 class="mkt-s2-h">Why Join Our Online Church</h2>
             </div>
-            <div class="col-md-6 mkt-vp">
+        <div class="column">
+            <div class="col-md-4 mkt-vp">
                 <img class="" src="{% static "images/lightbulb.png" %}"/>
-                <h5>Stay Current</h5>
+                <h5>Live Stream</h5>
                 <p>Staying updated on current sermons renews your faith.
                     It allows you to connect with millions who as committed 
-                    as you are.
-                </p>
+                    as you are.</p>
             </div>
+        <div class="column">
             <div class="col-md-4 mkt-vp">
                 <img class="" src="{% static "images/dollar.png" %}"/>
-                <h5>Contact Us</h5>
+                <h5>Community</h5>
                 <p>We are committed to enhancing your experience
                     and improving your journey towards a fulfilling
-                    and joyful relationship with Jesus.
-                </p>
+                    and joyful relationship with Jesus.</p>
+            </div>
+        <div class="column">
+            <div class="col-md-4 mkt-vp">
+                <img class="" src="{% static "images/dollar.png" %}"/>
+                <h5>Watch Live</h5>
+                <p>We are committed to enhancing your experience
+                    and improving your journey towards a fulfilling
+                    and joyful relationship with Jesus.</p>
             </div>
         </div>
         {# Second Signup Link #}
-        <a href="" class=" sgn-btm ">SIGN UP</a>
+<a href="" class=" top-left ">Sign-Up</a>
     </div>
-
 {% endblock content %}
